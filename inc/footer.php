@@ -6,29 +6,30 @@
 						<h4>Information</h4>
 						<ul>
 						<li><a href="#">About Us</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
+						<li><a href="#">Advanced Search</a></li>
 						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>FAQ</span></a></li>
+						<li><a href="#">FAQ</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Hear from us</h4>
 						<ul>
-						<li><a href="#"><span>Contact Us</span></a></li>
+						<li><a href="./contact.php">Contact Us</a></li>
 						<li><a href="faq.php">Customer Service</a></li>
 						<li><a href="#">Privacy Policy</a></li>
 					</li>
-						<li><a href="preview.php"><span>Search Terms</span></a></li>
+						<li><a href="preview.php">Search Terms</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>My account</h4>
 						<ul>
 							<li><a href="contact.php">Sign In</a></li>
-							<li><a href="index.php">View Cart</a></li>
+							<li><a href="profile.php">Profile</a></li>
+							<li><a href="cart.php">View Cart</a></li>
 							<li><a href="#">My Wishlist</a></li>
 							<li><a href="#">Track My Order</a></li>
-							<li><a href="faq.php">Help</a></li>
+							
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">

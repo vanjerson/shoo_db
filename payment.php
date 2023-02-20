@@ -16,7 +16,7 @@ if ($login == false) {
 	<div class="content">
 		<div class="section group">
 		<div class="payment">
-			<h2>Payment Ontion</h2>
+			<h2>Payment Option</h2>
 			<a href="paymentoffiline.php">Cash On Delivery</a>
 		</div>
 		<div class="back">

@@ -49,7 +49,7 @@ $cmr = new Customer();
   <div class="wrap">
     <div class="header_top">
       <div class="logo">
-        <a href="index.php"><h1 style="font-size:50px;color:purple;">G-Hub</h1></a>
+        <a href="index.php"><h1 style="font-size:50px;color:purple; font-family: Poppins; font-weight: bold;">G-Hub PH<span style="font-size: 20px; position: absolute; margin-left: 8px;">  &#8482</span></h1></a>
       </div>
         <div class="header_top_right">
           <div class="search_box">
@@ -72,9 +72,9 @@ $cmr = new Customer();
                 <?php 
                                 $getData = $ct->checkCartItem();
                                 if ($getData) {
-                                    $sum = Session::get("gTotal");
+                                    $sum = Session::get("sum");
                                     $qty = Session::get("qty");
-                                    echo "$".number_format($sum).".00"." | Qty: ".$qty;
+                                    echo "₱".number_format($sum)."."." | Qty: ".$qty;
                                 } else {
                                     echo '(Empty)';
                                 }

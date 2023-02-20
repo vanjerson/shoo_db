@@ -32,10 +32,11 @@ class Adminlogin
             $loginmsg = "Username or Password must not be empty!";
             return $loginmsg;
         } else {
-            $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser' AND adminPass = '$adminPass'";
+            $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser'";
             $result = $this->db->select($query);
             if ($result != false) {
                 $value = $result->fetch_assoc();
+                $hashed_password = $value['adminPass'];
                 Session::set("adminlogin", true);
                 Session::set("adminId", $value['adminId']);
                 Session::set("adminUser", $value['adminUser']);
@@ -49,3 +50,5 @@ class Adminlogin
         }
     }
 }
+
+?>
