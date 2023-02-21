@@ -71,7 +71,8 @@ if (isset($delProduct)) {
 							<?php
                             $qty = $qty + $result['quantity'];
                                     $sum = $sum + $total;
-                                    Session::set("qty", $qty); ?>
+                                    Session::set("qty", $qty); 
+									Session::set("price", $sum);?>
 							<?php
                                 }
                             } ?>

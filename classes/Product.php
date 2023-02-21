@@ -71,14 +71,20 @@ class Product
                     FROM tbl_product AS p, tbl_category AS c, tbl_brand AS b
                     WHERE p.catId = c.catId AND p.brandId = b.brandId
                     ORDER BY p.productId DESC";
-        /*$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName
-            FROM tbl_product
-            INNER JOIN tbl_category
-            ON tbl_product.catId = tbl_category.catId
-            INNER JOIN tbl_brand
-            ON tbl_product.brandId = tbl_brand.brandId
-            ORDER BY tbl_product.productId DESC";
-            */
+
+$result = $this->db->select($query);
+return $result;
+}
+
+    public function getProductsWithFilter($name) {
+        $whereQuery = ($name == "Search for Products" || "") ? ("") : ("WHERE p.productName LIKE '%$name%'");
+        $query = "SELECT p.*, c.catName, b.brandName
+                    FROM tbl_product AS p
+                    LEFT JOIN tbl_category as c ON p.catId = c.catId
+                    LEFT JOIN tbl_brand as b ON p.brandID = b.brandID
+                    $whereQuery
+                    ORDER BY p.productId DESC;
+                ";
         $result = $this->db->select($query);
         return $result;
     }

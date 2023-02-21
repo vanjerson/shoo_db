@@ -46,7 +46,7 @@ Session::checkSession();
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
-                    <h1 style="color:red">Dashbord</h1>
+                    <h1 style="color:red">Dashboard</h1>
                 </div>
                 <div class="floatright">
                     <div class="floatleft">

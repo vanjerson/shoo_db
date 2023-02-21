@@ -1,81 +1,31 @@
 <div class="header_bottom">
 		<div class="header_bottom_left">
+			<h1><?php $search_query ?></h1>
 			<div class="section group">
-				<?php 
-                $getIphone = $pd->latestFromIphone();
-                if ($getIphone) {
-                    while ($result = $getIphone->fetch_assoc()) {
-                        ?>
+				<?php
+				$search_query = '';
+				if(isset($_POST['search'])) {
+					$search_query = $_POST['valueToSearch'];
+				}
+				$getProducts = $pd -> getProductsWithFilter($search_query);
+				if ($getProducts) {
+					while ($result = $getProducts->fetch_assoc()) {
+						?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
 						 <a href="details.php?proId=<?php echo $result['productId']; ?>"> <img src="admin/<?php echo $result['image']; ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>GPU</h2>
+						<h2><?php echo $result['catName'];?></h2>
 						<p><?php echo $result['productName']; ?></p>
 						<div class="button"><span><a href="details.php?proId=<?php echo $result['productId']; ?>">Add to cart</a></span></div>
 				   </div>
-			   </div>
-<?php
-                    }
-                } ?>
-				<?php 
-                $getSamsung = $pd->latestFromSamsung();
-                if ($getSamsung) {
-                    while ($result = $getSamsung->fetch_assoc()) {
-                        ?>
-				<div class="listview_1_of_2 images_1_of_2">
-					<div class="listimg listimg_2_of_1">
-						 <a href="details.php?proId=<?php echo $result['productId']; ?>"> <img src="admin/<?php echo $result['image']; ?>" alt="" /></a>
-					</div>
-				    <div class="text list_2_of_1">
-						<h2>PHONE</h2>
-						<p><?php echo $result['productName']; ?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $result['productId']; ?>">Add to cart</a></span></div>
-				   </div>
-			   </div>
+			   </div>					
 <?php
                     }
                 } ?>
 			</div>
-			<div class="section group">
-				<?php 
-                $getAcer = $pd->latestFromAcer();
-                if ($getAcer) {
-                    while ($result = $getAcer->fetch_assoc()) {
-                        ?>
-				<div class="listview_1_of_2 images_1_of_2">
-					<div class="listimg listimg_2_of_1">
-						 <a href="details.php?proId=<?php echo $result['productId']; ?>"> <img src="admin/<?php echo $result['image']; ?>" alt="" /></a>
-					</div>
-				    <div class="text list_2_of_1">
-						<h2>ACCESORIES</h2>
-						<p><?php echo $result['productName']; ?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $result['productId']; ?>">Add to cart</a></span></div>
-				   </div>
-			   </div>
-<?php
-                    }
-                } ?>			
-				<?php 
-                $getCanon = $pd->latestFromCanon();
-                if ($getCanon) {
-                    while ($result = $getCanon->fetch_assoc()) {
-                        ?>
-				<div class="listview_1_of_2 images_1_of_2">
-					<div class="listimg listimg_2_of_1">
-						 <a href="details.php?proId=<?php echo $result['productId']; ?>"> <img src="admin/<?php echo $result['image']; ?>" alt="" /></a>
-					</div>
-				    <div class="text list_2_of_1">
-						<h2>LAPTOP</h2>
-						<p><?php echo $result['productName']; ?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $result['productId']; ?>">Add to cart</a></span></div>
-				   </div>
-			   </div>
-<?php
-                    }
-                } ?>
-			</div>
+			
 		  <div class="clear"></div>
 		</div>
 			 <div class="header_bottom_right_images">
