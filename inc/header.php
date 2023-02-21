@@ -95,7 +95,7 @@ header("Cache-Control: max-age=2592000");
           Session::destroy();
         }
         ?>
-        <div class="login">
+        <div class="login" style="width: 80px;">
           <?php
           $login = Session::get("cuslogin");
           if ($login == false) {
@@ -104,12 +104,13 @@ header("Cache-Control: max-age=2592000");
           <?php
           } else {
             ?>
-            <a href="?cid=<?php Session::get('cmrId'); ?>"> <span style="font-size: 15px;">Logout</span></a>
+            <a href="?cid=<?php Session::get('cmrId'); ?>"> <span style="height: 100%; width: 100%; font-weight: bold; font-size: 16px; color: #360187;">Logout</span></a>
           <?php
           }
           ?>
 
 
+        
         </div>
         <div class="clear"></div>
       </div>
